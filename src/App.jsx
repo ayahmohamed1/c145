@@ -110,7 +110,7 @@ export default function App() {
           <div className="envelope-image-box" onClick={handleOpenEnvelope}>
             <img 
               src={INVITATION_DATA.images?.envelope || "/envelope.png"} 
-              alt="ظرف الخطوبة الملكي" 
+              alt="ظرف دعوة الزفاف الملكي" 
               className="envelope-img" 
               onError={(e) => {
                 if (!e.currentTarget.dataset.retried) {

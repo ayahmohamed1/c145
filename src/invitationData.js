@@ -1,6 +1,6 @@
 /**
  * =========================================================================
- * ملف بيانات وتفاصيل دعوة الخطوبة
+ * ملف بيانات وتفاصيل دعوة الزفاف
  * INVITATION CONFIGURATION FILE
  * =========================================================================
  * يمكنك تغيير أي صورة بكل سهولة إما:
@@ -39,14 +39,14 @@ export const INVITATION_DATA = {
   },
 
   // ترويسة الغلاف والظرف
-  envelopeHeader: "We're getting engaged",
+  envelopeHeader: "We're getting married",
 
   // الاسمان بالخط الإنجليزي المائل
   scriptNames: "Mina & Mariam",
 
   // ترويسة الدعوة
-  headerTitleEn: "THE engagement OF OUR CHILDREN",
-  headerTitleAr: "حفل خطوبة مبارك",
+  headerTitleEn: "THE WEDDING OF OUR CHILDREN",
+  headerTitleAr: "حفل زفاف مبارك",
 
   // بيانات العريس
   groom: {
