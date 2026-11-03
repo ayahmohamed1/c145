@@ -241,7 +241,7 @@ export default function App() {
                 </div>
                 {INVITATION_DATA.gallery.videos.map((video) => (
                   <div className="gallery-media-card gallery-video-card" key={video.id}>
-                    <video controls playsInline preload="metadata" muted>
+                    <video playsInline preload="metadata" muted loop>
                       <source src={video.src} type="video/mp4" />
                       متصفحك لا يدعم تشغيل الفيديو.
                     </video>
