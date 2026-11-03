@@ -19,6 +19,35 @@ export default function App() {
 
   const audioRef = useRef(null);
 
+  useEffect(() => {
+    if (!isOpened) return undefined;
+
+    const videos = document.querySelectorAll('.gallery-video-card video');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.muted = true;
+          video.play().catch((err) => {
+            console.warn('Video autoplay was prevented', err);
+          });
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    videos.forEach((video) => {
+      video.muted = true;
+      observer.observe(video);
+    });
+
+    return () => {
+      observer.disconnect();
+      videos.forEach((video) => video.pause());
+    };
+  }, [isOpened]);
+
   // Countdown timer calculation
   useEffect(() => {
     function calcTime() {
@@ -212,7 +241,7 @@ export default function App() {
                 </div>
                 {INVITATION_DATA.gallery.videos.map((video) => (
                   <div className="gallery-media-card gallery-video-card" key={video.id}>
-                    <video controls playsInline preload="metadata">
+                    <video controls playsInline preload="metadata" muted>
                       <source src={video.src} type="video/mp4" />
                       متصفحك لا يدعم تشغيل الفيديو.
                     </video>
